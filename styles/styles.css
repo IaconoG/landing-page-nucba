@@ -21,7 +21,6 @@ html {
 body {
   width: 100%;
   min-height: 100vh;
-  background-color: var(--clr-primary);
   display: flex;
   flex-direction: column;
 }
@@ -102,8 +101,8 @@ h3 {
 main {
   min-width: 480px;
   width: 100%;
-  min-height: 80vh;
-  max-height: 100%;
+  background-color: var(--clr-primary);
+  flex-grow: 1;
   display: flex;
   align-items: center;
   flex-direction: column;
