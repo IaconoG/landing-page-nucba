@@ -3,9 +3,9 @@
   --clr-secondary: #1e1e24;
   --clr-details: #ffcf99;
   --clr-details-2: #af8ae2;
-  --clr-white: #fff8f0;
-  --clr-white-grey: #ffffffcc;
-  --clr-black: #2e2e2e;
+  --clr-white: #cecece;
+  --clr-grey: #323232;
+  --clr-black: #1c1c1c;
 }
 
 html {
@@ -52,18 +52,25 @@ a {
 }
 p {
   font-size: 2.4rem;
-  color: var(--clr-white-grey);
+  color: var(--clr-white);
 }
 h2,
 h3 {
   color: var(--clr-details);
+}
+h2,
+h3 {
   margin-bottom: 4rem;
 }
 h2 {
   font-size: 6.4rem;
 }
 h3 {
-  font-size: 5.2rem;
+  font-size: 5rem;
+}
+h4 {
+  font-size: 4rem;
+  color: var(--clr-black);
 }
 
 /* nav */
@@ -82,13 +89,15 @@ h3 {
   border-radius: 8px;
 }
 .contenedor-enlaces {
-  width: 500px;
+  width: fit-content;
   min-width: 300px;
   display: flex;
   align-items: center;
+  gap: 5vw;
 }
 .contenedor-enlaces > a {
   width: fit-content;
+  min-width: fit-content;
   margin-inline: auto;
   font-size: 2rem;
   font-weight: bold;
@@ -114,6 +123,7 @@ main > * {
   width: fit-content;
   max-width: 1200px;
   height: 100%;
+  min-height: 250px;
   display: flex;
 }
 
@@ -151,7 +161,7 @@ main > *:not(:first-child) {
   font-weight: bold;
   cursor: pointer;
   text-transform: uppercase;
-  border: 3px solid var(--clr-white-grey);
+  border: 3px solid var(--clr-white);
 }
 button.white {
   background-color: var(--clr-white);
@@ -186,10 +196,38 @@ button:active {
 }
 
 /* ABOUT */
-.about {
-  flex-direction: column;
-  text-align: center;
+
+/* OUR ADVANTAGES */
+.cards-container {
+  width: 100%;
+  display: flex;
+  gap: 5rem 5vw;
+  margin-top: 5rem;
 }
+.card {
+  min-width: 300px;
+  min-height: 300px;
+  background-color: var(--clr-white);
+  padding: 3rem 2rem;
+  margin: auto;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  gap: 2rem;
+  box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.1);
+}
+.card > p {
+  color: var(--clr-grey);
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+.card > img {
+  width: 100%;
+  height: 70px;
+}
+
+/* CONTACT */
 
 /* footer */
 footer p {
@@ -197,7 +235,14 @@ footer p {
   font-style: italic;
 }
 
-/* FIXME: No se donde poner la img del hero kjjj, igual seguro se ve mas adelante */
+@media screen and (max-width: 1150px) {
+  .cards-container {
+    flex-direction: column;
+  }
+  .cards-container > * {
+    max-width: 50vw;
+  }
+}
 @media screen and (max-width: 860px) {
   .hero-img > img,
   .hero-img {
