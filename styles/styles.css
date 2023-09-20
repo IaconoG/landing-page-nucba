@@ -1,3 +1,8 @@
+/* FIXME: Las cards creo q querdarian mejor con un negro mas fuerte q el fondo en ve de "blanco". Asi mismo las letras blancas */
+/* FIXME: Cambiar los iconos e contact porque no me gustan */
+/* FIXME: Contact section, armar para celular */
+/* FIXME: Al reducir la el tamano de la pantalla se debe reducir el font size de las letras*/
+
 :root {
   --clr-primary: #2e2e2e;
   --clr-secondary: #1e1e24;
@@ -19,7 +24,8 @@ html {
   font-family: "Roboto", sans-serif;
 }
 body {
-  width: 100%;
+  /* width: 100%; */
+  /* min-width: 500px; */
   min-height: 100vh;
   display: flex;
   flex-direction: column;
@@ -51,8 +57,12 @@ a {
   text-decoration: none;
 }
 p {
-  font-size: 2.4rem;
+  font-size: 2rem;
   color: var(--clr-white);
+}
+i {
+  color: var(--clr-grey);
+  font-size: 2rem;
 }
 h2,
 h3 {
@@ -68,9 +78,15 @@ h2 {
 h3 {
   font-size: 5rem;
 }
+h4,
+h5 {
+  color: var(--clr-black);
+}
 h4 {
   font-size: 4rem;
-  color: var(--clr-black);
+}
+h5 {
+  font-size: 2.5rem;
 }
 
 /* nav */
@@ -120,7 +136,7 @@ main {
 main > * {
   margin: 9rem 5rem;
   min-width: 480px;
-  width: fit-content;
+  width: 90vw;
   max-width: 1200px;
   height: 100%;
   min-height: 250px;
@@ -196,7 +212,9 @@ button:active {
 }
 
 /* ABOUT */
-
+#our-advantages > p {
+  height: 30px;
+}
 /* OUR ADVANTAGES */
 .cards-container {
   width: 100%;
@@ -205,7 +223,7 @@ button:active {
   margin-top: 5rem;
 }
 .card {
-  min-width: 300px;
+  min-width: 350px;
   min-height: 300px;
   background-color: var(--clr-white);
   padding: 3rem 2rem;
@@ -218,9 +236,10 @@ button:active {
   box-shadow: 0 0 15px 0px rgba(255, 255, 255, 0.1);
 }
 .card > p {
-  color: var(--clr-grey);
   font-size: 1.8rem;
+  color: var(--clr-grey);
   font-weight: bold;
+  min-height: 80px;
 }
 .card > img {
   width: 100%;
@@ -228,13 +247,78 @@ button:active {
 }
 
 /* CONTACT */
+#contact-section {
+  padding: 5rem;
+  text-align: left;
+  flex-direction: row;
+  background-color: var(--clr-white);
+  border-radius: 8px;
+}
+#contact-section p {
+  font-size: 1.8rem;
+  color: var(--clr-black);
+}
+.contact-img {
+  width: 350px;
+}
+.contact-img > img {
+  width: 100%;
+  height: 100%;
+  border-radius: 0 8px 8px 0;
+}
+.contacts-container {
+  flex-grow: 2;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 4rem 0;
+}
+.contacts-container h3 {
+  color: var(--clr-details-2);
+}
+.contacts-container > * {
+  width: 50%;
+}
+.contacts-container > *:first-child,
+.contacts-container > *:last-child {
+  margin-bottom: 0;
+  height: fit-content;
+  flex-basis: 100%;
+}
+.contact h5 {
+  margin-bottom: 2rem;
+}
+.contact > div {
+  /* border: 1px solid red; */
+  display: flex;
+  align-items: center;
+  padding-left: 1rem;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+.contact > div > i {
+  width: 30px;
+}
+.social-media-container {
+  display: flex;
+  gap: 2rem;
+}
+.social-media-container i {
+  font-size: 3rem;
+  cursor: pointer;
+}
 
 /* footer */
 footer p {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
   font-style: italic;
 }
 
+@media screen and (max-width: 1024px) {
+  /* Laptop */
+  main > * {
+  }
+}
 @media screen and (max-width: 1150px) {
   .cards-container {
     flex-direction: column;
@@ -243,12 +327,37 @@ footer p {
     max-width: 50vw;
   }
 }
-@media screen and (max-width: 860px) {
+@media screen and (max-width: 900px) {
   .hero-img > img,
   .hero-img {
     display: none;
   }
   .hero {
     text-align: center;
+  }
+  .contact-img,
+  .contact-img > img {
+    display: none;
+  }
+  /*  DELETE: */
+  /* .contenedor-enlaces {
+    display: none;
+  } */
+}
+@media screen and (max-width: 640px) {
+  #contact-section {
+    min-width: 350px;
+    width: 350px;
+    padding: 3rem 2rem;
+  }
+  .contacts-container {
+    text-align: center;
+  }
+  .contact div,
+  .social-media-container {
+    justify-content: center;
+  }
+  .contacts-container > * {
+    width: 100%;
   }
 }
