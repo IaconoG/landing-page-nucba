@@ -28,6 +28,9 @@ body {
   display: flex;
   flex-direction: column;
 }
+header {
+  min-width: 300px;
+}
 nav {
   width: 100%;
   min-height: 80px;
@@ -425,8 +428,8 @@ footer .my-links {
     top: 10vh;
     left: 65%;
     width: 35%;
-    min-width: 35%;
-    height: 30%;
+    min-width: 170px;
+    height: 350px;
     flex-direction: column;
     justify-content: center;
     border-radius: 0 0 0 16px;
@@ -488,5 +491,22 @@ footer .my-links {
   }
   #contact-section {
     width: 300px;
+  }
+  .navbar-list {
+    /* NAVBAR */
+    background-color: var(--clr-primary);
+    border: 1px solid var(--clr-white);
+    border-width: 0 1px 1px 1px;
+    height: calc(100vh - 80px);
+    position: absolute;
+    top: 10vh;
+    left: 0;
+    width: 100%;
+    min-width: 170px;
+    height: 30%;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 0 0 16px 16px;
+    display: none;
   }
 }
